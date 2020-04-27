@@ -1,38 +1,38 @@
 "use strict";
 module.exports = (sequelize, DataTypes) => {
-  const user = sequelize.define(
-    "user",
+  const match = sequelize.define(
+    "match",
     {
       name: {
         type: DataTypes.STRING,
         allowNull: false,
       },
-      logo: {
-        type: DataTypes.STRING,
+      date: {
+        type: DataTypes.DATE,
         allowNull: false,
       },
-      email: {
-        type: DataTypes.STRING,
+      time: {
+        type: DataTypes.TIME,
         unique: true,
         allowNull: false,
       },
-      password: {
+      side: {
         type: DataTypes.STRING,
         allowNull: false,
       },
-      klasse: {
-        type: DataTypes.STRING,
+      userId: {
+        type: DataTypes.INTEGER,
         allowNull: false,
       },
-      alert: {
+      matchId: {
         type: DataTypes.INTEGER,
         allowNull: false,
       },
     },
     {}
   );
-  user.associate = function (models) {
-    user.hasMany(models.match);
+  match.associate = function (models) {
+    match.belongsTo(models.user);
   };
-  return user;
+  return match;
 };
