@@ -13,7 +13,7 @@ module.exports = {
         allowNull: false,
       },
       date: {
-        type: Sequelize.DATE,
+        type: Sequelize.DATEONLY,
         allowNull: false,
       },
       time: {
@@ -30,6 +30,10 @@ module.exports = {
         allowNull: false,
       },
       matchId: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
+      },
+      request: {
         type: Sequelize.INTEGER,
         allowNull: false,
       },

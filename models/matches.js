@@ -1,4 +1,5 @@
 "use strict";
+var moment = require("moment");
 module.exports = (sequelize, DataTypes) => {
   const match = sequelize.define(
     "match",
@@ -8,7 +9,7 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: false,
       },
       date: {
-        type: DataTypes.DATE,
+        type: DataTypes.DATEONLY,
         allowNull: false,
       },
       time: {
@@ -25,6 +26,10 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: false,
       },
       matchId: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+      },
+      request: {
         type: DataTypes.INTEGER,
         allowNull: false,
       },
