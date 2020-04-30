@@ -151,8 +151,8 @@ app.post("/authorized_post_request", authMiddleWare, (req, res) => {
 const authRouter = require("./routers/auth");
 app.use("/", authRouter);
 
-const matchRouter = require("./routers/matches");
-app.use("/matches", matchRouter);
+const matchRouter = require("./routers/match");
+app.use("/match", matchRouter);
 
 // Listen for connections on specified port (default is port 4000)
 const { PORT } = require("./config/constants");

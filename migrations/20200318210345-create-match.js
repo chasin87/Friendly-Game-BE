@@ -18,7 +18,6 @@ module.exports = {
       },
       time: {
         type: Sequelize.TIME,
-        unique: true,
         allowNull: false,
       },
       side: {
