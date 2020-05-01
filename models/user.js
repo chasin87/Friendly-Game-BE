@@ -24,9 +24,6 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.STRING,
         allowNull: false,
       },
-      request: {
-        type: DataTypes.INTEGER,
-      },
     },
     {}
   );

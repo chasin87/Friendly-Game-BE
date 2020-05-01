@@ -28,10 +28,6 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.INTEGER,
         allowNull: false,
       },
-      request: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-      },
     },
     {}
   );
