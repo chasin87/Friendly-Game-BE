@@ -7,7 +7,7 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.STRING,
         allowNull: false,
       },
-      logo: {
+      image: {
         type: DataTypes.STRING,
         allowNull: false,
       },
@@ -24,9 +24,8 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.STRING,
         allowNull: false,
       },
-      alert: {
+      request: {
         type: DataTypes.INTEGER,
-        allowNull: false,
       },
     },
     {}

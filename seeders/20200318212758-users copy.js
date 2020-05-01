@@ -44,23 +44,23 @@ module.exports = {
       User.upsert({
         id: 1,
         name: "HYS",
-        logo: "https://hyshaarlem.nl/wp-content/uploads/2019/09/HYS_LOGO.png",
+        image: "https://hyshaarlem.nl/wp-content/uploads/2019/09/HYS_LOGO.png",
         email: "hys@hys.com",
         password: bcrypt.hashSync("hys", SALT_ROUNDS),
         klasse: "3e Klasse",
-        alert: 0,
+        request: 0,
         createdAt: new Date(),
         updatedAt: new Date(),
       }),
       User.upsert({
         id: 2,
         name: "DSK",
-        logo:
+        image:
           "https://media.hollandsevelden.nl/images/club_logo_van_voetbalvereniging_dsk_uit_haarlem.png",
         email: "dsk@dsk.com",
         password: bcrypt.hashSync("dsk", SALT_ROUNDS),
         klasse: "2e Klasse",
-        alert: 0,
+        request: 0,
         createdAt: new Date(),
         updatedAt: new Date(),
       }),

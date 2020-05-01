@@ -12,7 +12,7 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false,
       },
-      logo: {
+      image: {
         type: Sequelize.STRING,
         allowNull: false,
       },
@@ -29,9 +29,8 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false,
       },
-      alert: {
+      request: {
         type: Sequelize.INTEGER,
-        allowNull: false,
       },
       createdAt: {
         allowNull: false,
