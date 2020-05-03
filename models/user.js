@@ -29,6 +29,10 @@ module.exports = (sequelize, DataTypes) => {
   );
   user.associate = function (models) {
     user.hasMany(models.match);
+    user.belongsToMany(models.matchRequest, {
+      through: "match",
+      foreignKey: "userId",
+    });
   };
   return user;
 };

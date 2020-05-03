@@ -1,10 +1,13 @@
 "use strict";
-
 module.exports = (sequelize, DataTypes) => {
-  const match = sequelize.define(
-    "match",
+  const matchRequest = sequelize.define(
+    "matchRequest",
     {
-      name: {
+      homeTeam: {
+        type: DataTypes.STRING,
+        allowNull: false,
+      },
+      awayTeam: {
         type: DataTypes.STRING,
         allowNull: false,
       },
@@ -20,24 +23,19 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.STRING,
         allowNull: false,
       },
-      userId: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-      },
       matchId: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-      },
-      matchRequestId: {
         type: DataTypes.INTEGER,
         allowNull: false,
       },
     },
     {}
   );
-  match.associate = function (models) {
-    match.belongsTo(models.user);
-    match.belongsTo(models.matchRequest);
+  matchRequest.associate = function (models) {
+    matchRequest.hasMany(models.match);
+    matchRequest.belongsToMany(models.user, {
+      through: "match",
+      foreignKey: "userId",
+    });
   };
-  return match;
+  return matchRequest;
 };

@@ -25,13 +25,4 @@ router.post("/", auth, async (req, res) => {
   }
 });
 
-///Router word niet geupdate check router ivm /:id
-router.patch("/:id", async (req, res) => {
-  const reqs = await Matches.findByPk(req.params.id);
-  const { request } = req.body;
-  await reqs.update({ request });
-
-  return res.status(200).send({ reqs });
-});
-
 module.exports = router;

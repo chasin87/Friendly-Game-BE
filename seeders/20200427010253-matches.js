@@ -13,6 +13,7 @@ module.exports = {
           side: "Home",
           userId: 1,
           matchId: 1,
+          matchRequestId: 0,
           createdAt: new Date(),
           updatedAt: new Date(),
         },
@@ -24,6 +25,7 @@ module.exports = {
           side: "Away",
           userId: 2,
           matchId: 2,
+          matchRequestId: 0,
           createdAt: new Date(),
           updatedAt: new Date(),
         },
@@ -36,3 +38,4 @@ module.exports = {
     return queryInterface.bulkDelete("matches", null, {});
   },
 };
+//Bezig met the matchrequest model enz created, route maken om the posten met send request button
