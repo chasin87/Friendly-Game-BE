@@ -28,6 +28,14 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false,
       },
+      userIdHome: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
+      },
+      userIdAway: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
+      },
       matchId: {
         type: Sequelize.INTEGER,
         allowNull: false,

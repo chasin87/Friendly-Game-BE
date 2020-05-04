@@ -15,6 +15,16 @@ router.post("/", auth, async (req, res) => {
   }
 });
 
+router.get("/:id", async (req, res) => {
+  try {
+    const match = await MatchRequests.findOne({
+      where: { userIdHome: req.params.id },
+    });
+    res.status(200).json(match);
+  } catch (e) {
+    console.log("error: ", e);
+  }
+});
 module.exports = router;
 
 ///request naar fetch naar DB is gelukt

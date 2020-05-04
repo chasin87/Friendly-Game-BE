@@ -23,6 +23,14 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.STRING,
         allowNull: false,
       },
+      userIdHome: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+      },
+      userIdAway: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+      },
       matchId: {
         type: DataTypes.INTEGER,
         allowNull: false,
