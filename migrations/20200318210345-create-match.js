@@ -20,10 +20,6 @@ module.exports = {
         type: Sequelize.TIME,
         allowNull: false,
       },
-      side: {
-        type: Sequelize.STRING,
-        allowNull: false,
-      },
       userId: {
         type: Sequelize.INTEGER,
         allowNull: false,

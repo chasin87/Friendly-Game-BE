@@ -1,6 +1,7 @@
 const { Router } = require("express");
 const MatchRequests = require("../models").matchRequest;
 const auth = require("../auth/middleware");
+const User = require("../models").user;
 const router = new Router();
 
 router.post("/", auth, async (req, res) => {
@@ -17,14 +18,15 @@ router.post("/", auth, async (req, res) => {
 
 router.get("/:id", async (req, res) => {
   try {
-    const match = await MatchRequests.findOne({
+    const allMatchRequests = await MatchRequests.findAll({
       where: { userIdHome: req.params.id },
     });
-    res.status(200).json(match);
-  } catch (e) {
-    console.log("error: ", e);
+    res.status(200).json(allMatchRequests);
+  } catch (error) {
+    console.log("error: ", error);
   }
 });
+
 module.exports = router;
 
 ///request naar fetch naar DB is gelukt

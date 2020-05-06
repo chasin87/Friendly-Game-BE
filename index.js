@@ -155,7 +155,7 @@ const matchRouter = require("./routers/match");
 app.use("/match", matchRouter);
 
 const matchRequestRouter = require("./routers/matchRequests");
-app.use("/matchRequests", matchRequestRouter);
+app.use("/matchrequests", matchRequestRouter);
 
 // Listen for connections on specified port (default is port 4000)
 const { PORT } = require("./config/constants");

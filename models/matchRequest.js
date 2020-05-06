@@ -19,10 +19,6 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.TIME,
         allowNull: false,
       },
-      side: {
-        type: DataTypes.STRING,
-        allowNull: false,
-      },
       userIdHome: {
         type: DataTypes.INTEGER,
         allowNull: false,
@@ -34,6 +30,7 @@ module.exports = (sequelize, DataTypes) => {
       matchId: {
         type: DataTypes.INTEGER,
         allowNull: false,
+        unique: true,
       },
     },
     {}

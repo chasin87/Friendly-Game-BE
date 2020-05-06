@@ -24,21 +24,18 @@ module.exports = {
         type: Sequelize.TIME,
         allowNull: false,
       },
-      side: {
-        type: Sequelize.STRING,
-        allowNull: false,
-      },
       userIdHome: {
         type: Sequelize.INTEGER,
-        allowNull: false,
+        allowNull: true,
       },
       userIdAway: {
         type: Sequelize.INTEGER,
-        allowNull: false,
+        allowNull: true,
       },
       matchId: {
         type: Sequelize.INTEGER,
         allowNull: false,
+        unique: true,
       },
       createdAt: {
         allowNull: false,
