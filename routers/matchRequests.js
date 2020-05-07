@@ -3,6 +3,7 @@ const MatchRequests = require("../models").matchRequest;
 const auth = require("../auth/middleware");
 const User = require("../models").user;
 const router = new Router();
+const { Op } = require("sequelize");
 
 router.post("/", auth, async (req, res) => {
   try {
@@ -19,7 +20,9 @@ router.post("/", auth, async (req, res) => {
 router.get("/:id", async (req, res) => {
   try {
     const allMatchRequests = await MatchRequests.findAll({
-      where: { userIdHome: req.params.id },
+      where: {
+        [Op.or]: [{ userIdHome: req.params.id }, { userIdAway: req.params.id }],
+      },
     });
     res.status(200).json(allMatchRequests);
   } catch (error) {
@@ -30,4 +33,4 @@ router.get("/:id", async (req, res) => {
 module.exports = router;
 
 ///request naar fetch naar DB is gelukt
-// nu de wedstrijden displayen onder account
+// nu de wedstrijden displayen onder account userIdHome lukt nu nog away
