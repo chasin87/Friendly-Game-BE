@@ -31,6 +31,3 @@ router.get("/:id", async (req, res) => {
 });
 
 module.exports = router;
-
-///request naar fetch naar DB is gelukt
-// nu de wedstrijden displayen onder account userIdHome lukt nu nog away

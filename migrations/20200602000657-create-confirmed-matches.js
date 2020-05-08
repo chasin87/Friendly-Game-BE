@@ -1,7 +1,7 @@
 "use strict";
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.createTable("matchRequests", {
+    return queryInterface.createTable("confirmedMatches", {
       id: {
         allowNull: false,
         autoIncrement: true,
@@ -24,22 +24,10 @@ module.exports = {
         type: Sequelize.TIME,
         allowNull: false,
       },
-      userIdHome: {
-        type: Sequelize.INTEGER,
-        allowNull: true,
-      },
-      userIdAway: {
-        type: Sequelize.INTEGER,
-        allowNull: true,
-      },
       matchId: {
         type: Sequelize.INTEGER,
         allowNull: false,
         unique: true,
-      },
-      confirmedMatchId: {
-        type: Sequelize.INTEGER,
-        allowNull: true,
       },
       createdAt: {
         allowNull: false,
@@ -52,6 +40,6 @@ module.exports = {
     });
   },
   down: (queryInterface, Sequelize) => {
-    return queryInterface.dropTable("matchRequests");
+    return queryInterface.dropTable("confirmedMatches");
   },
 };

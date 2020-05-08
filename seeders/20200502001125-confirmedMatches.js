@@ -3,17 +3,14 @@
 module.exports = {
   up: (queryInterface, Sequelize) => {
     return queryInterface.bulkInsert(
-      "matchRequests",
+      "confirmedMatches",
       [
         {
           homeTeam: "HYS",
           awayTeam: "DSK",
           date: "2020-11-07",
           time: "14:30",
-          userIdHome: 1,
-          userIdAway: 2,
           matchId: -1,
-          confirmedMatchId: 0,
           createdAt: new Date(),
           updatedAt: new Date(),
         },
@@ -22,10 +19,7 @@ module.exports = {
           awayTeam: "HYS",
           date: "2020-09-12",
           time: "12:30",
-          userIdHome: 2,
-          userIdAway: 1,
           matchId: 0,
-          confirmedMatchId: 0,
           createdAt: new Date(),
           updatedAt: new Date(),
         },
@@ -35,6 +29,6 @@ module.exports = {
   },
 
   down: (queryInterface, Sequelize) => {
-    return queryInterface.bulkDelete("matchRequests", null, {});
+    return queryInterface.bulkDelete("confirmedMatches", null, {});
   },
 };

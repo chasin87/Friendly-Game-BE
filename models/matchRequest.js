@@ -32,11 +32,16 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: false,
         unique: true,
       },
+      confirmedMatchId: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+      },
     },
     {}
   );
   matchRequest.associate = function (models) {
     matchRequest.hasMany(models.match);
+    matchRequest.belongsTo(models.confirmedMatch);
     matchRequest.belongsToMany(models.user, {
       through: "match",
       foreignKey: "userId",
