@@ -1,21 +1,19 @@
-# Server template
+# Friendly Games - SERVER
 
-This is a simple server template to for my students to start projects quickly.
+Friendly Games is an application that allows to create amateur soccer associations to reach each other for friendly Matches.
+
+Built with Node with Express for RestAPIs in the backend, and PostgreSQL with Sequelize and PostGIS for storing location-based user data.
 
 ## Table of contents:
 
 - **[Setup](#setup-how-to-use-this-template)**
 - **[Endpoints](#endpoints)**
-- **[Sample requests with axios](#sample-requests-with-axios)**
-- **[Sample requests with httpie](#sample-requests-with-httpie)**
-- **[History of this project (pullrequests)](#history-of-this-project)**
+- **[Data Model](#data-model)**
+- **[Client side repo](#client-side-repo)**
 
 ## SETUP How to use this template
 
 1. Create a new project based on this template using the `Use this template` button
-
-![HOW_TO_USE](https://user-images.githubusercontent.com/20372832/77003323-70966180-695d-11ea-8abe-b362d57135f3.gif)
-
 2. Clone the app
 
 ```
@@ -83,6 +81,10 @@ npm run dev
 npm start
 ```
 
+## Data Model
+
+![](seeders/images/Data-model.png)
+
 ## Endpoints
 
 | Method | Path                       | Purpose                             | required parameters   | auth |
@@ -94,36 +96,8 @@ npm start
 | GET    | '/me'                      | Get information of this user        | none                  | yes  |
 | POST   | '/authorized_post_request' | Test POST requests (token required) | none                  | yes  |
 
-## Sample requests with axios
+## Client side repo
 
-To demo making request to this server, some small script are included that make requests using `axios`
+The client side of this project is built with React and Redux and styled with CSS3 and Bootsrap.
 
-The scripts can be found in [/sampleRequests](./sampleRequests)
-
-1. Make sure to follow the the setup in this readme first
-2. cd sampleRequests
-3. Run example requests
-
-```
-node hello.js
-node echo.js
-node signup.js
-node login.js
-node me.js
-node authorizedPost.js
-```
-
-## Sample requests with httpie
-
-To demo making request to this server, bash commands are included that make requests using `httpie`
-
-They can found in [./sampleRequests/httpie.md](./sampleRequests/httpie.md)
-
-## History of this project
-
-- [Setup of the server](https://github.com/Codaisseur/express-template/commit/cd2f790fbab6c561300163466a074fd09a35f704)
-- [Adding a README](https://github.com/Codaisseur/express-template/pull/1)
-- [Setting up the Database](https://github.com/Codaisseur/express-template/pull/2)
-- [Signup, Login & auth middleware](https://github.com/Codaisseur/express-template/pull/3)
-- [Configure cors](https://github.com/Codaisseur/express-template/pull/4)
-- [Seed using models & add delay middleware](https://github.com/Codaisseur/express-template/pull/5)
+[Click here](https://github.com/chasin87/Friendly-Game-FE) to view client side repo
