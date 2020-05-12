@@ -166,3 +166,6 @@ const { PORT } = require("./config/constants");
 app.listen(PORT, () => {
   console.log(`Listening on port: ${PORT}`);
 });
+
+const cors = require("cors");
+app.use(cors());
